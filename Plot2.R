@@ -1,5 +1,11 @@
 ## Plot #2
 
+#write plot to png
+
+png(filename = "Plot2.png", width = 480, height = 480)
+
+#read data
+
 powerConsumption <- read.table("household_power_consumption.txt", skip = 1, sep = ";")
 
 #renaming variables based on instructions
@@ -20,10 +26,6 @@ power[1441:2880, "Time"] <- format(power[1441:2880, "Time"], "2007-02-02 %H:%M:%
 #create a plot using the plot function
 
 plot(power$Time, as.numeric(as.character(power$Global_active_power)), type = "l", xlab = " ", ylab = "Global Active Power(kilowatts)")
-
-#write plot to png
-
-png(filename = "Plot2.png", width = 480, height = 480)
 
 #turn off graphics device
 

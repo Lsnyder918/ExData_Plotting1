@@ -1,5 +1,11 @@
 ## Plot #4
 
+#write plot to png
+
+png(filename = "Plot4.png", width = 480, height = 480)
+
+#read data
+
 powerConsumption <- read.table("household_power_consumption.txt", skip = 1, sep = ";")
 
 #renaming variables based on instructions
@@ -37,10 +43,6 @@ with(power, {
   #plot 4
   plot(power$Time, as.numeric(as.character(power$Global_reactive_power)), type = "l", xlab = "datetime", ylab = "Global_reactive_power")
   })
-
-#write plot to png
-
-png(filename = "Plot4.png", width = 480, height = 480)
 
 #turn off graphics device
 

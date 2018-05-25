@@ -1,5 +1,11 @@
 ## Plot #3
 
+#write plot to png
+
+png(filename = "Plot3.png", width = 480, height = 480)
+
+#read data
+
 powerConsumption <- read.table("household_power_consumption.txt", skip = 1, sep = ";")
 
 #renaming variables based on instructions
@@ -27,10 +33,6 @@ with(power, lines(Time, as.numeric(as.character(Sub_metering_3)), col = "blue"))
 #add a legend
 
 legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-
-#write plot to png
-
-png(filename = "Plot3.png", width = 480, height = 480)
 
 #turn off graphics device
 

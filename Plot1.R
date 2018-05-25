@@ -1,5 +1,11 @@
 ## Plot #1
 
+#write plot to png
+
+png(filename = "Plot1.png", width = 480, height = 480)
+
+#read data
+
 powerConsumption <- read.table("household_power_consumption.txt", skip = 1, sep = ";")
 
 #renaming variables based on instructions
@@ -13,10 +19,6 @@ power <- subset(powerConsumption, powerConsumption$Date == "1/2/2007" | powerCon
 #create a histogram by calling hist function
 
 hist(as.numeric(as.character(power$Global_active_power)), col = "red", main = "Global Active Power", xlab = "Global Active Power(kilowatts)")
-
-#write plot to png
-
-png(filename = "Plot1.png", width = 480, height = 480)
 
 #turn off graphics device
 
